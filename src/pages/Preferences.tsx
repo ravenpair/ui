@@ -73,14 +73,18 @@ export default function Preferences() {
               <p className="text-sm font-medium">Email notifications</p>
               <p className="text-xs text-muted-foreground">Receive email updates about your account</p>
             </div>
-            <Button variant="outline" size="sm">Configure</Button>
+            <Button variant="outline" size="sm" disabled>
+              Configure
+            </Button>
           </div>
           <div className="flex items-center justify-between">
             <div>
               <p className="text-sm font-medium">Two-factor authentication</p>
               <p className="text-xs text-muted-foreground">Add an extra layer of security</p>
             </div>
-            <Button variant="outline" size="sm">Enable</Button>
+            <Button variant="outline" size="sm" disabled>
+              Enable
+            </Button>
           </div>
         </CardContent>
       </Card>
