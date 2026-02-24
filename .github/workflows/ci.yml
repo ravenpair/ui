@@ -91,7 +91,14 @@ jobs:
                 ref: branch,
               });
               sha = data.sha;
-            } catch (_) {}
+            } catch (error) {
+              if (error && error.status === 404) {
+                // File does not yet exist on the screenshots branch; this is expected.
+              } else {
+                console.error('Failed to fetch existing screenshot content', error);
+                throw error;
+              }
+            }
 
             await github.rest.repos.createOrUpdateFileContents({
               owner: context.repo.owner,
