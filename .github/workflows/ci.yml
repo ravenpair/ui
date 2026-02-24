@@ -58,7 +58,7 @@ jobs:
       - name: Take screenshot of login page
         run: |
           npx vite preview --port 4173 &
-          sleep 3
+          npx wait-on http://localhost:4173
           npx playwright screenshot --browser chromium http://localhost:4173 screenshot-login.png
 
       - name: Upload screenshot artifact
